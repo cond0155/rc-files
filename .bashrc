@@ -18,6 +18,7 @@ else
 	SHOULD_IMPORT_ANDROID=false
 	SHOULD_SETUP_MOVIELENS=false
 	SHOULD_SETUP_FOR_PERSONAL_MAC=false
+	SHOULD_SOURCE_GIT_COMPLETION=false
 fi
 
 
@@ -66,6 +67,12 @@ if [ $SHOULD_IMPORT_ANDROID = true ]; then
 	source "${DIR}/android-setup.sh"
 fi
 
+
+#---------------------------------------------------
+# Git tab completion (https://github.com/git/git/blob/master/contrib/completion/git-completion.bash)
+if [ $SHOULD_SOURCE_GIT_COMPLETION = true ]; then
+	source "${DIR}/git-completion.bash"
+fi
 
 
 # ln -s .bashrc ~/.bash_profile
